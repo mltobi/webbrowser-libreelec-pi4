@@ -1,2 +1,2 @@
 #!/bin/sh
-/usr/bin/docker build -t webbrowser-libreelec-pi4 docker
+docker build -t webbrowser-libreelec-pi4 docker

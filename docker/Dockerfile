@@ -4,7 +4,7 @@ COPY 10-inputs.conf /etc/X11/xorg.conf.d/
 
 COPY webbrowser-run.sh /
 
-RUN chmod u+x webrowser-run.sh \
+RUN chmod u+x webbrowser-run.sh \
  && apt-get update \
  && apt-get install -y --reinstall keyboard-configuration \
  && apt-get install -y \
