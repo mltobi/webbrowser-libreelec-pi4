@@ -17,6 +17,7 @@ RUN chmod u+x webbrowser-run.sh \
             xorg \
             xserver-xorg-input-evdev \
             libgles2-mesa \
+            libcurl3-gnutls \
  && apt-get -y install fonts-liberation \
  && wget https://downloads.vivaldi.com/stable/vivaldi-stable_5.0.2497.32-1_armhf.deb \
  && dpkg -i vivaldi-stable_5.0.2497.32-1_armhf.deb

@@ -12,7 +12,7 @@ case "$LIBREELEC_ARCH" in
   *)
 esac
 
-cec-client | nc -u 127.0.0.1 1234 &
+#cec-client | nc -u 127.0.0.1 1234 &
 
 rm -fr /storage/.config/chromium-browser/SingletonLock
 docker run --privileged --rm -it \
@@ -21,7 +21,7 @@ docker run --privileged --rm -it \
            -v /run/udev/data:/run/udev/data \
            -v /var/run/dbus:/run/dbus \
            webbrowser-libreelec-pi4 \
-           /run.sh $1 $2
+           /webbrowser-run.sh $1 $2
 
 pkill -P $$
 
