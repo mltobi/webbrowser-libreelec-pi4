@@ -17,9 +17,10 @@ xset s off
 xset s noblank
 
 # start webrowser
-if [ $1="vivaldi" ]; then
+if [ "$1" = "vivaldi" ]; then
   vivaldi \
    --verbose \
+   --no-sandbox \
    --user-data-dir='/storage/.config/vivaldi' \
    --start-maximized \
    --ignore-gpu-blocklist \
@@ -28,11 +29,11 @@ if [ $1="vivaldi" ]; then
    --enable-oop-rasterization \
    --disable-gpu-driver-bug-workarounds \
    --use-gl=desktop \
-   --enable-features=VaapiVideoDecoder \
    $2
 fi
+#   --enable-features=VaapiVideoDecoder \
 
-if [ $1="chromium-browser" ]; then
+if [ "$1" = "chromium-browser" ]; then
   chromium-browser \
    --verbose \
    --no-sandbox \
@@ -40,10 +41,10 @@ if [ $1="chromium-browser" ]; then
    --start-maximized \
    --ignore-gpu-blocklist \
    --enable-accelerated-video-decode \
-   --enable-gpu-rasterization \
-   --enable-oop-rasterization \
-   --disable-gpu-driver-bug-workarounds \
    --use-gl=desktop \
    --enable-features=VaapiVideoDecoder \
    $2
 fi
+#   --enable-gpu-rasterization \
+#   --enable-oop-rasterization \
+#   --disable-gpu-driver-bug-workarounds \
