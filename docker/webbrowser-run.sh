@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#chmod 777 /dev/vchiq
-
 # start X11 on display 0
 startx -- :0 &
 sleep 2
@@ -25,13 +23,11 @@ if [ "$1" = "vivaldi" ]; then
    --start-maximized \
    --ignore-gpu-blocklist \
    --enable-accelerated-video-decode \
-   --enable-gpu-rasterization \
-   --enable-oop-rasterization \
    --disable-gpu-driver-bug-workarounds \
    --use-gl=desktop \
+   --enable-features=VaapiVideoDecoder \
    $2
 fi
-#   --enable-features=VaapiVideoDecoder \
 
 if [ "$1" = "chromium-browser" ]; then
   chromium-browser \
@@ -41,10 +37,10 @@ if [ "$1" = "chromium-browser" ]; then
    --start-maximized \
    --ignore-gpu-blocklist \
    --enable-accelerated-video-decode \
+   --disable-gpu-driver-bug-workarounds \
    --use-gl=desktop \
    --enable-features=VaapiVideoDecoder \
    $2
 fi
 #   --enable-gpu-rasterization \
 #   --enable-oop-rasterization \
-#   --disable-gpu-driver-bug-workarounds \
